@@ -20,7 +20,9 @@ An Excel dashboard analysing ~108,000 order lines from an apparel seller on Amaz
 
 ## Cleaning Steps
 
+- Started from 128,975 raw rows and removed 18,332 cancelled order lines plus 2,572 lines with a missing or zero amount or a zero quantity, leaving 108,071 order lines
 - Filled 26 blank `State` values with "Unknown"
+- Standardised state spellings (e.g. "Rajshthan" and "RJ" → Rajasthan, "New Delhi" → Delhi, "Orissa" → Odisha)
 - Grouped detailed order statuses into four buckets: In Transit, Delivered, Returned, Other
 - Added `Month` and `Week_Start` (Monday of the order's week) columns from the order date
 - Kept 7,344 repeated Order IDs, since these are multi-item orders (one row per product)
